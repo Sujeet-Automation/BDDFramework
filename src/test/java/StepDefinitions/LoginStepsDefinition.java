@@ -23,10 +23,10 @@ public class LoginStepsDefinition {
 	    driver.get("https://motor.rqbeonline.co.in/");
 	}
 
-	@When("User enters valid username and password")
-	public void user_enters_valid_username_and_password() {
-		driver.findElement(By.id("Email")).sendKeys("sujeet");
-		driver.findElement(By.id("Password")).sendKeys("test@123");
+	@When("User enters valid {string} and {string}")
+	public void user_enters_valid_username_and_password(String username,String password) {
+		driver.findElement(By.id("Email")).sendKeys(username);
+		driver.findElement(By.id("Password")).sendKeys(password);
 	}
 
 	@When("Click on Login Button")
