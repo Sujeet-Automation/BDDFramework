@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import PageObject.PageFactoryModel;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,24 +15,31 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class LoginStepsDefinition {
-	static WebDriver driver;
+	 WebDriver driver;
+	 
+	 
+	
 	@Given("User is on login page")
 	public void user_is_on_login_page() {
+		
 	    driver=new ChromeDriver();
 	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	    driver.manage().window().maximize();
 	    driver.get("https://motor.rqbeonline.co.in/");
+	    
 	}
 
 	@When("User enters valid {string} and {string}")
 	public void user_enters_valid_username_and_password(String username,String password) {
-		driver.findElement(By.id("Email")).sendKeys(username);
-		driver.findElement(By.id("Password")).sendKeys(password);
+		PageFactoryModel object=new PageFactoryModel(driver);
+		object.EmailID.sendKeys(username);
+		object.Password.sendKeys(password);
 	}
 
 	@When("Click on Login Button")
 	public void click_on_login_button() {
-		driver.findElement(By.cssSelector("button[type='submit']")).click();
+		PageFactoryModel object=new PageFactoryModel(driver);
+		object.Submit.click();
 	}
 
 	@Then("User is navigated to Home Page")

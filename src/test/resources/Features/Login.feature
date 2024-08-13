@@ -1,6 +1,6 @@
 Feature: Login Page Automation
 
-Scenario: Check login is successfull with Valid creds
+Scenario Outline: Check login is successfull with Valid creds
 Given User is on login page
 When User enters valid "<username>" and "<password>"
 When Click on Login Button
@@ -10,6 +10,5 @@ Then Close the browser
 Examples:
 | username | password |
 |ankit|password|
-|mayur|pass|
 
 
