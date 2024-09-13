@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Aug 12 16:49:13 IST 2024</td>
+<td>Started on:</td><td>Fri Sep 13 16:51:28 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>2 seconds (2646 ms)</td>
+<tr><td>Total time:</td><td>84 seconds (84151 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -77,8 +77,15 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='TestRunner.CucumberTestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunner.CucumberTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check login is successfull with Valid creds", "Login Page Automation"</td>
-<td></td>
-<td>2</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.support.ui.WebDriverWait.until(java.util.function.Function)&quot; because &quot;StepDefinitions.LoginStepsDefinition.wait&quot; is null
+	at StepDefinitions.LoginStepsDefinition.Click_on_Book_Store_Application(LoginStepsDefinition.java:35)
+	at ✽.Click on Book Store Application(file:///C:/Users/Admin/Downloads/Sujeet/src/test/resources/features/Login.feature:5)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1493142905", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1493142905'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.support.ui.WebDriverWait.until(java.util.function.Function)&quot; because &quot;StepDefinitions.LoginStepsDefinition.wait&quot; is null
+	at StepDefinitions.LoginStepsDefinition.Click_on_Book_Store_Application(LoginStepsDefinition.java:35)
+	at ✽.Click on Book Store Application(file:///C:/Users/Admin/Downloads/Sujeet/src/test/resources/features/Login.feature:5)
+</pre></div></td>
+<td>83</td>
 <td>TestRunner.CucumberTestRunner@4009e306</td></tr>
 </table><p>
 </body>
