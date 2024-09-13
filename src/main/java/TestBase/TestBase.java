@@ -27,11 +27,4 @@ public class TestBase {
 		return driver;
 		
 	}
-public WebDriverWait  Driverwait() {
-		
-	 wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		return wait;
-		
-	}
-	
 }

@@ -40,7 +40,7 @@ public class LoginStepsDefinition extends TestBase {
 		
 	}
 
-	@Then("Click on Login")
+	@And("Click on Login")
 	public void Click_on_login() throws InterruptedException {
 		js.executeScript("window.scrollBy(0,650)", "");
 		if(object.Loginclick.isDisplayed()) {
@@ -64,13 +64,13 @@ public class LoginStepsDefinition extends TestBase {
 		object.Password.sendKeys(password);
 	}
 
-	@When("Click on Login Button")
+	@And("Click on Login Button")
 	public void click_on_login_button() throws InterruptedException {
 		js.executeScript("window.scrollBy(0,650)", "");
 		object.login.click();
 	}
 
-	@Then("Click on Login Logout")
+	@Then("Click on Logout Button")
 	public void Click_on_Logout() throws InterruptedException {
 		wait.WaitForElement(object.LogOut,5);
 		js.executeScript("window.scrollBy(0,250)", "");
