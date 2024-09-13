@@ -16,9 +16,9 @@ private WebDriver driver;
 		this.driver = driver;
 	}
 	
-	public void WaitForElement(WebElement element){
+	public void WaitForElement(WebElement element,int i){
 		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(i));
 		wait.until(ExpectedConditions.visibilityOf(element));
 		
 	}

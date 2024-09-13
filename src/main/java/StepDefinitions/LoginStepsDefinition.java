@@ -19,7 +19,7 @@ import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginStepsDefinition extends TestBase {
-	
+	WaitElement wait=new WaitElement(driver);
 	PageFactoryModel object = new PageFactoryModel(driver);
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	
@@ -32,23 +32,28 @@ public class LoginStepsDefinition extends TestBase {
 	public void Click_on_Book_Store_Application() throws InterruptedException {
 		
 		js.executeScript("window.scrollBy(0,650)", "");
-        wait.until(ExpectedConditions.elementToBeClickable(object.BooksAPPs)).click();
+		wait.WaitForElement(object.BooksAPPs,5);
+        object.BooksAPPs.click();
 		js.executeScript("window.scrollBy(0,650)", "");
-		wait.until(ExpectedConditions.elementToBeClickable(object.BooksAPPs1)).click();
+		wait.WaitForElement(object.BooksAPPs1,5);
+        object.BooksAPPs1.click();
+		
 	}
 
 	@Then("Click on Login")
 	public void Click_on_login() throws InterruptedException {
 		js.executeScript("window.scrollBy(0,650)", "");
 		if(object.Loginclick.isDisplayed()) {
-			wait.until(ExpectedConditions.visibilityOf(object.Loginclick)).click();
+			wait.WaitForElement(object.Loginclick,5);
+	        object.Loginclick.click();
+			
 			
 		}
 		else {
-			wait.until(ExpectedConditions.visibilityOf(object.BooksAPPs1)).click();
-			object.BooksAPPs1.click();
-			wait.until(ExpectedConditions.visibilityOf(object.Loginclick)).click();
-			object.Loginclick.click();
+			wait.WaitForElement(object.BooksAPPs1,5);
+	        object.BooksAPPs1.click();
+	        wait.WaitForElement(object.Loginclick,5);
+	        object.Loginclick.click();
 		}
 		
 	}
@@ -67,7 +72,7 @@ public class LoginStepsDefinition extends TestBase {
 
 	@Then("Click on Login Logout")
 	public void Click_on_Logout() throws InterruptedException {
-		wait.until(ExpectedConditions.visibilityOf(object.LogOut));
+		wait.WaitForElement(object.LogOut,5);
 		js.executeScript("window.scrollBy(0,250)", "");
 		//*[@class='rt-tr']//div[@class='rt-resizable-header-content']
 		String abc=driver.findElement(By.xpath("//*[@class='rt-tr']")).getText();

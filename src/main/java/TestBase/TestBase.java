@@ -27,9 +27,9 @@ public class TestBase {
 		return driver;
 		
 	}
-public WebDriverWait  WebDriverWaitabc() {
+public WebDriverWait  Driverwait() {
 		
-	 wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+	 wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		return wait;
 		
 	}
