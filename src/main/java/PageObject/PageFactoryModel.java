@@ -15,6 +15,8 @@ public class PageFactoryModel {
 	public WebElement BooksAPPs;
     @FindBy(xpath = "//*[text()='Book Store Application']")
 	public WebElement BooksAPPs1;
+    @FindBy(xpath = "(//*[text()='Login'])[1]//ancestor::div[@class='element-list collapse show']")
+	public WebElement Loginclickvisible;
     @FindBy(xpath = "(//*[text()='Login'])[1]")
 	public WebElement Loginclick;
 	@FindBy(id = "userName")

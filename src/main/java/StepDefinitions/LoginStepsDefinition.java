@@ -32,10 +32,10 @@ public class LoginStepsDefinition extends TestBase {
 	public void Click_on_Book_Store_Application() throws InterruptedException {
 		
 		js.executeScript("window.scrollBy(0,650)", "");
-		wait.WaitForElement(object.BooksAPPs,5);
+		wait.WaitForElementvisibilityOf(object.BooksAPPs,5);
         object.BooksAPPs.click();
 		js.executeScript("window.scrollBy(0,650)", "");
-		wait.WaitForElement(object.BooksAPPs1,5);
+		wait.WaitForElementvisibilityOf(object.BooksAPPs1,5);
         object.BooksAPPs1.click();
 		
 	}
@@ -43,16 +43,14 @@ public class LoginStepsDefinition extends TestBase {
 	@And("Click on Login")
 	public void Click_on_login() throws InterruptedException {
 		js.executeScript("window.scrollBy(0,650)", "");
-		if(object.Loginclick.isDisplayed()) {
-			wait.WaitForElement(object.Loginclick,5);
-	        object.Loginclick.click();
-			
-			
+		if(wait.isElementPresent(object.Loginclickvisible)==true) {
+			wait.WaitForElementvisibilityOf(object.Loginclick, 5);
+	        object.Loginclick.click();	
 		}
-		else {
-			wait.WaitForElement(object.BooksAPPs1,5);
+		else if(wait.isElementPresent(object.Loginclickvisible)==false) {
+			wait.WaitForElementvisibilityOf(object.BooksAPPs1,5);
 	        object.BooksAPPs1.click();
-	        wait.WaitForElement(object.Loginclick,5);
+	        wait.WaitForElementvisibilityOf(object.Loginclick,5);
 	        object.Loginclick.click();
 		}
 		
@@ -72,7 +70,7 @@ public class LoginStepsDefinition extends TestBase {
 
 	@Then("Click on Logout Button")
 	public void Click_on_Logout() throws InterruptedException {
-		wait.WaitForElement(object.LogOut,5);
+		wait.WaitForElementvisibilityOf(object.LogOut,5);
 		js.executeScript("window.scrollBy(0,250)", "");
 		//*[@class='rt-tr']//div[@class='rt-resizable-header-content']
 		String abc=driver.findElement(By.xpath("//*[@class='rt-tr']")).getText();
