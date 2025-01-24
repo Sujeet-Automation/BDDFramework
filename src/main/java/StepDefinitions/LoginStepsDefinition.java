@@ -32,50 +32,50 @@ public class LoginStepsDefinition extends TestBase {
 	public void Click_on_Book_Store_Application() throws InterruptedException {
 		
 		js.executeScript("window.scrollBy(0,650)", "");
-		wait.WaitForElementvisibilityOf(object.BooksAPPs,5);
-        object.BooksAPPs.click();
+		wait.WaitForElementvisibilityOf(object.getBooksAPPs(),5);
+        object.getBooksAPPs().click();
 		js.executeScript("window.scrollBy(0,650)", "");
-		wait.WaitForElementvisibilityOf(object.BooksAPPs1,5);
-        object.BooksAPPs1.click();
+		wait.WaitForElementvisibilityOf(object.getBooksAPPs1(),5);
+        object.getBooksAPPs1().click();
 		
 	}
 
 	@And("Click on Login")
 	public void Click_on_login() throws InterruptedException {
 		js.executeScript("window.scrollBy(0,650)", "");
-		if(wait.isElementPresent(object.Loginclickvisible)==true) {
-			wait.WaitForElementvisibilityOf(object.Loginclick, 5);
-	        object.Loginclick.click();	
+		if(wait.isElementPresent(object.getLoginclickvisible())==true) {
+			wait.WaitForElementvisibilityOf(object.getLoginclick(), 5);
+	        object.getLoginclick().click();	
 		}
-		else if(wait.isElementPresent(object.Loginclickvisible)==false) {
-			wait.WaitForElementvisibilityOf(object.BooksAPPs1,5);
-	        object.BooksAPPs1.click();
-	        wait.WaitForElementvisibilityOf(object.Loginclick,5);
-	        object.Loginclick.click();
+		else if(wait.isElementPresent(object.getLoginclickvisible())==false) {
+			wait.WaitForElementvisibilityOf(object.getBooksAPPs1(),5);
+	        object.getBooksAPPs1().click();
+	        wait.WaitForElementvisibilityOf(object.getLoginclick(),5);
+	        object.getLoginclick().click();
 		}
 		
 	}
 	@When("User enters valid {string} and {string}")
 	public void user_enters_valid_username_and_password(String username, String password) {
 		js.executeScript("window.scrollBy(0,650)", "");
-		object.userName.sendKeys(username);
-		object.Password.sendKeys(password);
+		object.getUserName().sendKeys(username);
+		object.getPassword().sendKeys(password);
 	}
 
 	@And("Click on Login Button")
 	public void click_on_login_button() throws InterruptedException {
 		js.executeScript("window.scrollBy(0,650)", "");
-		object.login.click();
+		object.getLogin().click();
 	}
 
 	@Then("Click on Logout Button")
 	public void Click_on_Logout() throws InterruptedException {
-		wait.WaitForElementvisibilityOf(object.LogOut,5);
+		wait.WaitForElementvisibilityOf(object.getLogOut(),5);
 		js.executeScript("window.scrollBy(0,250)", "");
 		//*[@class='rt-tr']//div[@class='rt-resizable-header-content']
 		String abc=driver.findElement(By.xpath("//*[@class='rt-tr']")).getText();
 		System.out.println(abc);
-		object.LogOut.click();
+		object.getLogOut().click();
 	}
 
 }

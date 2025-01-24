@@ -18,7 +18,7 @@ public class TestBase {
 	public WebDriver selectbrowser(String browser) {
 		
 		if (browser.equalsIgnoreCase(Browsers.CHROME.name())) {
-			WebDriverManager.chromedriver().setup();
+			//WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			

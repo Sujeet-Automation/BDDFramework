@@ -12,26 +12,64 @@ public class PageFactoryModel {
     WebDriver driver;
 
     @FindBy(xpath = "(//*[@class='avatar mx-auto white'])[6]")
-	public WebElement BooksAPPs;
+	private WebElement BooksAPPs;
     @FindBy(xpath = "//*[text()='Book Store Application']")
-	public WebElement BooksAPPs1;
+    private WebElement BooksAPPs1;
     @FindBy(xpath = "(//*[text()='Login'])[1]//ancestor::div[@class='element-list collapse show']")
-	public WebElement Loginclickvisible;
+    private WebElement Loginclickvisible;
     @FindBy(xpath = "(//*[text()='Login'])[1]")
-	public WebElement Loginclick;
+    private WebElement Loginclick;
 	@FindBy(id = "userName")
-	public WebElement userName;
+	private WebElement userName;
 	@FindBy(xpath = "//*[@id='password']")
-	public WebElement Password;
+	private WebElement Password;
 	@FindBy(xpath = "//*[@id='login']")
-	public WebElement login;
-	 @FindBy(xpath = "//*[text()='Log out']")
-	public WebElement LogOut;
+	private WebElement login;
+	@FindBy(xpath = "//*[text()='Log out']")
+	private WebElement LogOut;
 	
 	
 	public PageFactoryModel(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		}
+
+
+	public WebElement getBooksAPPs() {
+		return BooksAPPs;
+	}
+	
+	public WebElement getBooksAPPs1() {
+		return BooksAPPs1;
+	}
+
+	public WebElement getUserName() {
+		return userName;
+	}
+
+
+	public WebElement getPassword() {
+		return Password;
+	}
+
+
+	public WebElement getLoginclickvisible() {
+		return Loginclickvisible;
+	}
+
+
+	public WebElement getLoginclick() {
+		return Loginclick;
+	}
+
+
+	public WebElement getLogOut() {
+		return LogOut;
+	}
+
+
+	public WebElement getLogin() {
+		return login;
+	}
 
 }
